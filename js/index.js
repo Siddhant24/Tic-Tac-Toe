@@ -65,7 +65,7 @@ $(document).ready(function(){
     message.text("You won!");
     $(".row").fadeOut(1000);
     setTimeout(function(){$(".game-over").fadeIn(1000);}, 1000);
-    var newscore = (parseInt($(".player-score").text().slice(-1))+1).toString();
+    var newscore = (parseInt($(".player-score").text().slice(8))+1).toString();
     $(".player-score").text(`Player: ${newscore}`);
     ct = 1;
   }
@@ -73,7 +73,7 @@ $(document).ready(function(){
     message.text("Computer won!");
     $(".row").fadeOut(1000);
     setTimeout(function(){$(".game-over").fadeIn(1000);}, 1000);
-    var newscore = (parseInt($(".computer-score").text().slice(-1)) + 1).toString();
+    var newscore = (parseInt($(".computer-score").text().slice(10)) + 1).toString();
     $(".computer-score").text(`Computer: ${newscore}`);
     ct = 2;
 	}

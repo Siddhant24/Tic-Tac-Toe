@@ -54,10 +54,12 @@ body{
 
 .player-score{
   float: left;
+  margin-left: 20px;
 }
 
 .computer-score{
   float: right;
+  margin-right: 20px;
 }
 
 [id^=block]{
