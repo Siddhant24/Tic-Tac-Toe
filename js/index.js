@@ -20,7 +20,7 @@ $(document).ready(function(){
       else
         player = huplayer;
   });
-  
+
   $("#O").on("click", function(){
     huplayer = "O";
     aiplayer = "X";
@@ -38,14 +38,14 @@ $(document).ready(function(){
     else
       player = huplayer;
   });
-  
+
   $("#play-again").on("click", function(){
     origboard = [0,1,2,3,4,5,6,7,8];
     $(".col-xs-4").children("span").text("");
     $(".game-over").fadeOut(1000);
     setTimeout(function(){$(".game-choice").fadeIn(1000);}, 1000);
   });
-  
+
   $(".col-xs-4").on("click", function(){
   if($(this).children("span").text() == ""){
     $(this).children("span").text(player);
@@ -65,12 +65,16 @@ $(document).ready(function(){
     message.text("You won!");
     $(".row").fadeOut(1000);
     setTimeout(function(){$(".game-over").fadeIn(1000);}, 1000);
+    var newscore = (parseInt($(".player-score").text().slice(-1))+1).toString();
+    $(".player-score").text(`Player: ${newscore}`);
     ct = 1;
   }
 	else if (winning(origboard, aiplayer)){
     message.text("Computer won!");
     $(".row").fadeOut(1000);
     setTimeout(function(){$(".game-over").fadeIn(1000);}, 1000);
+    var newscore = (parseInt($(".computer-score").text().slice(-1)) + 1).toString();
+    $(".computer-score").text(`Computer: ${newscore}`);
     ct = 2;
 	}
   else if (availspots.length === 0){
@@ -139,8 +143,8 @@ function minimax(newboard, player){
     }
   }
   return moves[bestMove];
-}  
-  
+}
+
 
 function emptyspots(board){
   return board.filter(val => val != 'X' && val != 'O');
