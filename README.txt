@@ -1,1 +1,3 @@
-A tic-tac-toe game created using javascript.
+# Tic-Tac-Toe
+
+### An unbeatable tic-tac-toe game created using JavaScript.
